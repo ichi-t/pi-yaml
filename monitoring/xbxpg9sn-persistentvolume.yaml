@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: xbxpg9sn
+  labels:
+    app: prometheus
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: default-iscsi
+  iscsi:
+   targetPortal: nas:3260
+   iqn: iqn.2004-04.com.qnap:ts-231p:iscsi.xbxpg9sn.2fd8c8
+   lun: 0
+   fsType: 'ext4'
+   readOnly: false
